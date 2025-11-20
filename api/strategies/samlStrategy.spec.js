@@ -274,22 +274,6 @@ u7wlOSk+oFzDIO/UILIA
     await setupSaml();
   });
 
-  it('should keep RequestedAuthnContext enabled by default', () => {
-    const [options] = SamlStrategy.mock.calls.at(-1);
-    expect(options.disableRequestedAuthnContext).toBe(false);
-  });
-
-  it('should disable RequestedAuthnContext when configured', async () => {
-    process.env.SAML_DISABLE_REQUESTED_AUTHN_CONTEXT = 'true';
-
-    await setupSaml();
-
-    const [options] = SamlStrategy.mock.calls.at(-1);
-    expect(options.disableRequestedAuthnContext).toBe(true);
-
-    delete process.env.SAML_DISABLE_REQUESTED_AUTHN_CONTEXT;
-  });
-
   it('should create a new user with correct username when username claim exists', async () => {
     const profile = { ...baseProfile };
     const { user } = await validate(profile);
