@@ -252,7 +252,6 @@ meeVRI332bg1Nuy8KnnX8v3ZeJzMBkAhzvSr6Ri96R0/Un/oEFwVC5jDTq8sXVn6
 u7wlOSk+oFzDIO/UILIA
 -----END CERTIFICATE-----
     `;
-
     // Reset environment variables
     process.env.SAML_ENTRY_POINT = 'https://example.com/saml';
     process.env.SAML_ISSUER = 'saml-issuer';
